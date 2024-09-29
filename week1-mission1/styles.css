@@ -1,0 +1,87 @@
+body {
+  background-color: #EBF5FF;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden; /* 스크롤 방지 */
+}
+
+.container {
+  text-align: center;
+  margin-top: 130px; /* 상단 여백 */
+}
+
+h1 {
+  margin: 0; /* 기본 여백 제거 */
+  margin-bottom: 100px;
+}
+hr {
+  border: none; /* 기본 테두리 제거 */
+  border-top: 3px solid #dce5ff; /* 원하는 색상으로 설정 */
+  margin: 20px 0; /* 여백 설정 */
+}
+.todo-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* 리스트 간의 간격 */
+  gap: 30px;
+}
+
+.pending-tasks,
+.completed-tasks {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 배치 */
+  align-items: center; /* 중앙 정렬 */
+  width: 100%;
+  min-width: 400px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  width: fit-content;
+  border-bottom: 4px solid #dce5ff; 
+  padding-bottom: 5px;
+  margin: 0;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-height: 800px; /* 최대 높이 설정 */
+  width: 400px; /* 너비 고정 */
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0; /* 각 항목 간격 */
+  width: 100%; /* li 너비를 ul에 맞춤 */
+  max-width: 400px; /* 목록 항목의 최대 너비 설정 */
+  border-bottom: 4px solid #dce5ff; /* 각 항목 아래에 밑줄 추가 */
+  padding-bottom: 7px; /* 밑줄과 내용 간의 여백 */
+  word-break: break-all; 
+  font-weight: bold;
+
+}
+
+input {
+  width: 500px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px;
+  margin-left: 10px;
+  min-width: 60px;
+  border: none;
+  cursor: pointer;
+  background-color: #dce5ff;
+  font-weight: bold;
+}
