@@ -1,0 +1,20 @@
+.movies-list {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); 
+  gap: 10px; 
+}
+
+.movie-card {
+  position: relative;
+  overflow: hidden; 
+}
+
+.movie-card img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 5px;
+}
+
+.movie-card:hover img {
+  filter: brightness(70%);
+}
