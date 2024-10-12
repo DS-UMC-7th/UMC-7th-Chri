@@ -8,7 +8,7 @@ export const NavbarContainer = styled.nav`
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   justify-content: space-between;
   line-height: 60px;
 `;
@@ -16,7 +16,7 @@ export const NavbarContainer = styled.nav`
 export const Logo = styled(Link)`
   color: #ff0080;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 3rem;
 `;
 
 export const Button = styled(Link)`

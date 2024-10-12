@@ -2,11 +2,15 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const CategoryContainer = styled.div`
+  background-color: black;
+  flex: 1;
   padding: 20px;
 `;
 
 export const CategoryTitle = styled.h2`
   color: white;
+  font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 20px;
 `;
 

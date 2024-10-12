@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const MovieContainer = styled.div`
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   width: 100%;
+  flex: 1;
+  overflow: hidden;
 `;
 
 export const MovieList = styled.div`
@@ -14,7 +17,7 @@ export const MovieList = styled.div`
   justify-content: flex-start; 
   width: 100%; 
   margin: 0 auto;
-  padding: 0 20px; 
+  padding: 20px; 
   gap: 30px;
 `;
 
@@ -37,10 +40,9 @@ export const MovieInfo = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 10px;
-  margin-top: -10px;
   
   h3 {
-    margin-bottom: 2px;
+    margin: 5px 0;
   }
 
   p {

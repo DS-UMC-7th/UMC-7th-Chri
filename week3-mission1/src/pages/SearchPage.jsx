@@ -9,4 +9,4 @@ const Search = () => {
   );
 };
 
-export default Search; // 기본 내보내기 추가
+export default Search;

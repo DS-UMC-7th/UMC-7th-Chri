@@ -1,5 +1,3 @@
-// src/components/Navbar.jsx
-import React from 'react';
 import * as N from './NavbarStyle';
 
 const Navbar = () => (

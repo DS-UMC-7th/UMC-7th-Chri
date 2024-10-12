@@ -1,5 +1,3 @@
-// src/components/Sidebar.jsx
-import React from 'react';
 import { FiSearch, FiFilm } from 'react-icons/fi';
 import * as S from './SidebarStyle';
 
