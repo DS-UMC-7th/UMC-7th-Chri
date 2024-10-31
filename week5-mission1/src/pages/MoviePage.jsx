@@ -1,4 +1,3 @@
-import {MOVIES} from "../../mocks/movies.js";
 import Card from "../../components/Card/card.jsx";
 
 import * as S from './movies.style.js'

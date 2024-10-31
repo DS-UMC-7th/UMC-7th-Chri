@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // useNavigate 가져오기
 import axios from 'axios';
-import * as M from './MovieCategoryStyle'; // 스타일 컴포넌트 경로
+import * as M from './MovieListStyle'; // 스타일 컴포넌트 경로
 
 const MovieList = ({ apiUrl }) => {
   const [movies, setMovies] = useState([]);

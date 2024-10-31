@@ -8,11 +8,11 @@ import RootLayout from "./layout/root-layout.jsx";
 import Login from "./pages/Login/Login.jsx"
 import SearchPage from './pages/Search/SearchPage.jsx';
 import Signup from "./pages/SignUp/Signup.jsx";
-import Category from './pages/Category.jsx';
-import NowPlaying from "./pages/CategoryPage/NowPlaying.jsx";
-import Popular from "./pages/CategoryPage/Popular.jsx";
-import TopRated from "./pages/CategoryPage/TopRated.jsx";
-import UpComing from "./pages/CategoryPage/Upcoming.jsx";
+import Category from './pages/Category/Category.jsx';
+import NowPlaying from "./pages/CategoryInnerPage/NowPlaying.jsx";
+import Popular from "./pages/CategoryInnerPage/Popular.jsx";
+import TopRated from "./pages/CategoryInnerPage/TopRated.jsx";
+import UpComing from "./pages/CategoryInnerPage/Upcoming.jsx";
 import MovieDetail from './pages/Detail/MovieDetail.jsx';
 
 const router = createBrowserRouter([
