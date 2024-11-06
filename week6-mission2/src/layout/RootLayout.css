@@ -1,0 +1,21 @@
+/* 전체 레이아웃을 위한 스타일 */
+.root-layout {
+  display: flex;
+  flex-direction: column; /* Navbar를 상단에 배치하기 위해 세로축 방향으로 배치 */
+  height: 100vh; /* 전체 화면 높이 차지 */
+}
+
+.main-content {
+  display: flex;
+  flex: 1; /* Navbar 아래에서 남은 공간을 차지하게 설정 */
+}
+
+.sidebar {
+  width: 250px; /* Sidebar의 너비를 적절히 설정 */
+  background-color: #f4f4f4; /* Sidebar 배경 색 (예시) */
+}
+
+.outlet {
+  flex: 1; /* 나머지 공간을 Outlet이 차지하게 설정 */
+  padding: 20px; /* 적절한 패딩 추가 */
+}
