@@ -4,7 +4,8 @@ import * as S from './SearchStyle';
 const Search = () => {
   return (
     <S.SearchContainer>
-      <S.Title>검색페이지 야호~!</S.Title>
+      <input placeholder='영화 제목을 입력해주세요...' />
+      <button>검색</button>
     </S.SearchContainer>
   );
 };

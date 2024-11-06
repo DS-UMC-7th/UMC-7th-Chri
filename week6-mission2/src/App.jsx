@@ -5,7 +5,7 @@ import MainPage from "./pages/MainContent.jsx";
 import NotFound from "./pages/Movies/not-found.jsx";
 import RootLayout from "./layout/root-layout.jsx";
 import Login from "./pages/Login/Login.jsx";
-import SearchPage from './pages/Search/SearchPage.jsx';
+import SearchPage from './pages/Search/Search.jsx';
 import Signup from "./pages/SignUp/Signup.jsx";
 import Category from './pages/Category.jsx';
 import NowPlaying from "./pages/CategoryPage/NowPlaying.jsx";

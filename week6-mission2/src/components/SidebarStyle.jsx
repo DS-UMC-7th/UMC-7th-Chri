@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const SidebarContainer = styled.aside`
-  width: 250px;
   background-color: #333;
   color: white;
   padding: 25px;
