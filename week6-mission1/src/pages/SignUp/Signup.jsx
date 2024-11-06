@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import axios from 'axios';
+import {axiosAuthInstance} from '../../apis/axios-instance';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -34,20 +34,20 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     try {
-      // 로그인 API 호출
-      const response = await axios.post('http://localhost:3000/auth/register', {
+      const response = await axiosAuthInstance.post('/auth/register', {
         email: data.email,
         password: data.password,
-        passwordcheck: data.passwordcheck,
+        passwordCheck: data.passwordcheck, 
       });
-  
-      // 로그인 성공
-      console.log('로그인 성공:', response.data);
-      navigate('/');
+    
+      // 회원가입 성공
+      console.log('회원가입 성공:', response.data);
+      navigate('/login');
     } catch (error) {
       // 오류 처리
-      console.error('로그인 실패:', error.response?.data || error.message);
-    }  };
+      console.error('회원가입 실패:', error.response?.data || error.message);
+    }
+  };
 
   const email = watch('email');
   const password = watch('password');

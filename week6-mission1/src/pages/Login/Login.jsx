@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import axios from 'axios';
+import {axiosAuthInstance} from '../../apis/axios-instance';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -28,31 +28,30 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      // 로그인 API 호출
-      const response = await axios.post('http://localhost:3000/auth/login', {
+      const response = await axiosAuthInstance.post('/auth/login', {
         email: data.email,
         password: data.password,
       });
   
-      // 로그인 성공 시 AccessToken과 RefreshToken을 로컬 스토리지에 저장
       const { accessToken, refreshToken } = response.data;
+  
+      if (!accessToken || !refreshToken) {
+        throw new Error('토큰 저장에 실패했습니다.');
+      }
+  
       localStorage.setItem('accessToken', accessToken);
       localStorage.setItem('refreshToken', refreshToken);
-      localStorage.setItem('userEmail', data.email);
-
-      console.log('로그인 성공:', response.data);
-      console.log("Login successful, triggering storage event.");
   
-      // storage 이벤트 발생
+      console.log('로그인 성공:', response.data);
+  
       window.dispatchEvent(new Event('storage'));
       navigate('/');
     } catch (error) {
-      // 오류 처리
       console.error('로그인 실패:', error.response?.data || error.message);
+      alert('로그인에 실패했습니다. 다시 시도해 주세요.');
     }
   };
   
-
   const email = watch('email');
   const password = watch('password');
   const isFormValid = !!(email && password && Object.keys(errors).length === 0);
