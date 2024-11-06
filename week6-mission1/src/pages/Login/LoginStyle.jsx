@@ -35,8 +35,8 @@ export const ErrorMessage = styled.p`
   color: red;
   font-size: 12px;
   height: 10px;
-  visibility: ${props => (props.show ? 'visible' : 'hidden')}; /* 항상 높이 유지 */
-  opacity: ${props => (props.show ? 1 : 0)};
+  visibility: ${({ $show }) => ($show ? 'visible' : 'hidden')};
+  opacity: ${({ $show }) => ($show ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
 `;
 
@@ -47,7 +47,7 @@ export const StyledButton = styled.button`
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background-color: ${props => (props.disabled ? 'gray' : '#ff69b4')};
+  background-color: ${({ $disabled }) => ($disabled ? 'gray' : '#ff69b4')};
   color: white;
   font-size: 1.2rem;
   cursor: pointer;

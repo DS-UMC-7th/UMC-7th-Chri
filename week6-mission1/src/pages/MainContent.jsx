@@ -1,7 +1,3 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Login from './Login/Login';
-import Signup from './SignUp/Signup';
 import useCustomFetch from '../hooks/useCustomFetch';
 import * as M from './MainContentStyle';
 
@@ -22,25 +18,16 @@ const MainContent = () => {
 
   return (
     <M.ContentArea>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <M.MoviesList>
-              {movies.results.map((movie) => (
-                <M.MovieCard key={movie.id}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                    alt={movie.title}
-                  />
-                </M.MovieCard>
-              ))}
-            </M.MoviesList>
-          }
-        />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
+      <M.MoviesList>
+        {movies.results.map((movie) => (
+          <M.MovieCard key={movie.id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+            />
+          </M.MovieCard>
+        ))}
+      </M.MoviesList>
     </M.ContentArea>
   );
 };

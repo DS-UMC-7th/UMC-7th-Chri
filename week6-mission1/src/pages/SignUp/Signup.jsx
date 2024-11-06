@@ -1,9 +1,13 @@
 import * as S from './SignupStyle';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios';
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   // 유효성 검사 스키마 정의
   const schema = yup.object().shape({
     email: yup.string()
@@ -27,9 +31,23 @@ const Signup = () => {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log('회원가입 데이터:', data);
-  };
+
+  const onSubmit = async (data) => {
+    try {
+      // 로그인 API 호출
+      const response = await axios.post('http://localhost:3000/auth/register', {
+        email: data.email,
+        password: data.password,
+        passwordcheck: data.passwordcheck,
+      });
+  
+      // 로그인 성공
+      console.log('로그인 성공:', response.data);
+      navigate('/');
+    } catch (error) {
+      // 오류 처리
+      console.error('로그인 실패:', error.response?.data || error.message);
+    }  };
 
   const email = watch('email');
   const password = watch('password');
@@ -47,7 +65,7 @@ const Signup = () => {
             {...register('email', { onChange: () => trigger('email') })} 
             required
           />
-          <S.ErrorMessage show={!!errors.email}>{errors.email?.message}</S.ErrorMessage>
+          <S.ErrorMessage $show={!!errors.email}>{errors.email?.message}</S.ErrorMessage>
         </S.StyledInputContainer>
 
         <S.StyledInputContainer>
@@ -57,7 +75,7 @@ const Signup = () => {
             {...register('password', { onChange: () => trigger('password') })} 
             required
           />
-          <S.ErrorMessage show={!!errors.password}>{errors.password?.message}</S.ErrorMessage>
+          <S.ErrorMessage $show={!!errors.password}>{errors.password?.message}</S.ErrorMessage>
         </S.StyledInputContainer>
 
         <S.StyledInputContainer>
@@ -67,12 +85,12 @@ const Signup = () => {
             {...register('passwordcheck', { onChange: () => trigger('passwordcheck') })} 
             required
           />
-          <S.ErrorMessage show={!!errors.passwordcheck}>{errors.passwordcheck?.message}</S.ErrorMessage>
+          <S.ErrorMessage $show={!!errors.passwordcheck}>{errors.passwordcheck?.message}</S.ErrorMessage>
         </S.StyledInputContainer>
 
         <S.StyledButton 
           type='submit' 
-          disabled={!isFormValid}
+          $disabled={!isFormValid}
         >
           제출
         </S.StyledButton>
