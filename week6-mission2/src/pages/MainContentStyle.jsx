@@ -9,7 +9,7 @@ export const ContentArea = styled.div`
 export const MoviesList = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 10px;
+  gap: 1rem;
 `;
 
 export const MovieCard = styled.div`

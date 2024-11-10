@@ -1,1 +1,6 @@
 @import "reset.css";
+
+*{
+  overflow-y: hidden; /* 세로 스크롤 없애기 */
+
+}

@@ -12,6 +12,7 @@ const MovieList = ({ apiUrl }) => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(apiUrl);
+        console.log(response.data.results); // 응답 데이터 확인
         setMovies(response.data.results);
       } catch (err) {
         setError(err.message);
@@ -34,7 +35,12 @@ const MovieList = ({ apiUrl }) => {
       <M.MovieList>
         {movies.map(movie => (
           <M.MovieCard key={movie.id} onClick={() => handleMovieClick(movie.id)}>
-            <M.MovieImage src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+            <M.MovieImage 
+              src={movie.poster_path 
+                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                : '/path/to/default-image.jpg'}  // 기본 이미지 경로 추가
+              alt={movie.title} 
+            />
             <M.MovieInfo>
               <h3>{movie.title}</h3>
               <p>{movie.release_date}</p>
